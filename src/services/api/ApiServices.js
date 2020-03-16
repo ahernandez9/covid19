@@ -9,8 +9,6 @@ export const launchAsyncTask = (currentProps, currentFunction) => async(dispatch
     let httpClient = axios.create();
     httpClient.defaults.baseURL = apiURL;
 
-    console.log(currentProps, currentFunction);
-
     if (verb === 'DEL') {
         await httpClient.delete(url, config)
             .then((result) => { response = result })

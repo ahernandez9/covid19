@@ -10,10 +10,12 @@ export const setState = (type, payload) => (dispatch) => {
 
 export const apiRegister = () => async (dispatch) => {
   await setLoadingDefault(true);
-    console.log("HOLA");
-  postRegister(
+
+  await dispatch(
+      postRegister(
       (error) => {console.log(error)},
       (response) => console.log(response)
+      )
   );
 
   await setLoadingDefault(false);

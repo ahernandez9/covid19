@@ -4,14 +4,15 @@ import {connect} from "react-redux";
 
 import Color from '../../resources/Color';
 import {apiRegister} from './RegisterActions';
+import Routing from '../../services/navigation/Routing';
 
 class RegisterContainer extends Component {
 
-    renderButton() {
+    renderButton(onPress, title) {
         return (
             <View style={styles.buttonContainer}>
-                <TouchableOpacity style={styles.button} onPress={this._register}>
-                    <Text>Hola</Text>
+                <TouchableOpacity style={styles.button} onPress={onPress}>
+                    <Text style={{textAlign: 'center'}}>{title}</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -19,7 +20,8 @@ class RegisterContainer extends Component {
     render() {
         return (
             <View style={{flex: 1}}>
-                {this.renderButton()}
+                {this.renderButton(this._register, 'Post')}
+                {this.renderButton(this._goToLogin, 'Navigate')}
             </View>
         )
     }
@@ -27,6 +29,10 @@ class RegisterContainer extends Component {
     _register = () => {
         const { apiRegister } = this.props;
         apiRegister();
+    };
+
+    _goToLogin = () => {
+        Routing.route(Routing.login)
     }
 }
 
@@ -34,6 +40,8 @@ const styles = {
     button: {
         width: '80%',
         height: 60,
+        alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor: Color.lightGrey
     },
     buttonContainer: {

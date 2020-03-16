@@ -25,15 +25,15 @@ import {Types, Verbs} from './ApiTypes';
 export const postLogin = (callbackError, callbackSuccess) => async(dispatch, getState) => {
     let url    = `/LogInServlet`;
     let params = {
-        email: "",
-        password: ""
+        email: "albertohr1996@gmail.com",
+        password: "123456"
     };
-    // let config = {
-    //     headers: {
-    //         'Authorization': 'Bearer '+ accessToken,
-    //         'Content-Type':  'application/json'
-    //     }
-    // };
+    let config = {
+        // headers: {
+            // 'Authorization': 'Bearer '+ accessToken,
+            // 'Content-Type':  'x-www-form-urlencoded'
+        // }
+    };
 
     const currentFunction      = postLogin(callbackError, callbackSuccess);
     const currentFunctionProps = {tag: Types.POST_LOGIN, verb: Verbs.POST, url, config, params, callbackError, callbackSuccess};
@@ -42,7 +42,6 @@ export const postLogin = (callbackError, callbackSuccess) => async(dispatch, get
 
 export const postRegister = (callbackError, callbackSuccess) => async(dispatch, getState) => {
     let url    = `/RegisterServlet`;
-    console.log("CHACHO", url);
     let params = {
         email: "albertohr1996@gmail.com",
         password: "123456"
