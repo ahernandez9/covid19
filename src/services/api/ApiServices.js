@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {apiURL} from 'app.json';
+import {apiURL} from '../../../app.json';
 
 let isShowingAlert = false;
 
@@ -8,6 +8,8 @@ export const launchAsyncTask = (currentProps, currentFunction) => async(dispatch
     let response   = null;
     let httpClient = axios.create();
     httpClient.defaults.baseURL = apiURL;
+
+    console.log(currentProps, currentFunction);
 
     if (verb === 'DEL') {
         await httpClient.delete(url, config)

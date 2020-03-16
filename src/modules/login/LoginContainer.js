@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import {View} from "react-native";
+import {View, Text} from "react-native";
 import {connect} from "react-redux";
 
 class LoginContainer extends Component {
 
     render() {
         return (
-            <View>
-
+            <View style={{flex: 1}}>
+                <Text>Hola</Text>
             </View>
         )
     }
@@ -37,10 +37,9 @@ const styles = {
 
 const mapStateToPros = state => {
     return {
-        mostPopularMedia: state.listViewReducer,
     }
 };
 
-const mapStateToPropsAction = {getMovieDetailAction, getTVShowDetailAction};
+const mapStateToPropsAction = {};
 
 export default connect(mapStateToPros, mapStateToPropsAction)(LoginContainer);

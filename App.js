@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React from 'react';
+import React, {Component} from 'react';
 import {
   SafeAreaView,
   StatusBar,
@@ -25,7 +25,7 @@ class App extends Component {
         <Provider store={store}>
           <PersistGate persistor={persistor} loading={false}>
             <StatusBar barStyle="dark-content" />
-            <SafeAreaView>
+            <SafeAreaView style={{flex: 1}}>
               <RouterComponent/>
             </SafeAreaView>
           </PersistGate>

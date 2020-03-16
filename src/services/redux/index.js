@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
 
 // Reducers
-import MainReducer from 'modules/main/MainReducer';
-import LoadingReducer from 'services/redux/loading/LoadingReducer';
+import MainReducer from '../../modules/main/MainReducer';
+import LoadingReducer from '../../services/redux/loading/LoadingReducer';
 import RegisterReducer from '../../modules/register/RegisterReducer';
 import LoginReducer from '../../modules/login/LoginReducer';
 

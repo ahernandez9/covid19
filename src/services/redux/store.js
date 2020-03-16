@@ -2,13 +2,13 @@ import reducer from "./index"
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import {applyMiddleware, compose, createStore} from 'redux';
-import {persistStore, persistReducer, persistCombineReducers} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import {persistStore, persistReducer} from 'redux-persist';
+import AsyncStorage from '@react-native-community/async-storage';
 
 // Note: this API requires redux@>=3.1.0
 const config = {
     key: 'root',
-    storage,
+    storage: AsyncStorage,
     blacklist: [],
     whitelist: []
 };
@@ -33,6 +33,4 @@ export default function configureStore() {
     let persistor = persistStore(store);
 
     return {persistor, store};
-
-
 }

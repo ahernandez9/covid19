@@ -1,46 +1,58 @@
 import React, {Component} from 'react';
-import {View} from "react-native";
+import {View, TouchableOpacity, Text} from "react-native";
 import {connect} from "react-redux";
+
+import Color from '../../resources/Color';
+import {apiRegister} from './RegisterActions';
 
 class RegisterContainer extends Component {
 
-    render() {
+    renderButton() {
         return (
-            <View>
-
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.button} onPress={this._register}>
+                    <Text>Hola</Text>
+                </TouchableOpacity>
             </View>
         )
+    }
+    render() {
+        return (
+            <View style={{flex: 1}}>
+                {this.renderButton()}
+            </View>
+        )
+    }
+
+    _register = () => {
+        const { apiRegister } = this.props;
+        apiRegister();
     }
 }
 
 const styles = {
-    title: {
-        fontSize: 30,
-        textAlign: 'center',
-        fontFamily: 'Wanted M54',
-        marginBottom: 20,
-        marginTop: 10,
-        color: 'white'
-    },
     button: {
-        position: 'absolute',
-        bottom: 30,
-        right: 30,
-        width: 70,
-        height: 70,
-        borderRadius:65/2,
-        backgroundColor: 'white',
-        alignItems:'center',
-        justifyContent:'center'
+        width: '80%',
+        height: 60,
+        backgroundColor: Color.lightGrey
+    },
+    buttonContainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 };
 
-const mapStateToPros = state => {
+const mapStateToPros = ({RegisterReducer}) => {
+    const {email} = RegisterReducer;
+
     return {
-        mostPopularMedia: state.listViewReducer,
+        email
     }
 };
 
-const mapStateToPropsAction = {getMovieDetailAction, getTVShowDetailAction};
+const mapStateToPropsAction = {
+    apiRegister
+};
 
 export default connect(mapStateToPros, mapStateToPropsAction)(RegisterContainer);

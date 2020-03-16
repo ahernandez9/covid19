@@ -5,9 +5,9 @@ import {connect} from 'react-redux';
 // Actions
 
 // Resources
-import {Style} from 'resources/Style';
-import {Texts} from 'resources/Texts';
-import Color from 'resources/Color';
+import {Style} from '../../resources/Style';
+import {Texts} from '../../resources/Texts';
+import Color from '../../resources/Color';
 
 
 class NavBarMain extends Component {

@@ -2,7 +2,7 @@ import React from 'react';
 import {Actions} from 'react-native-router-flux';
 
 // Resources
-import Routing from 'Routing';
+import Routing from './Routing';
 
 // Components
 

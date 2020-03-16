@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { Style } from './Style';
-import Color from "resources/values/color";
+import Color from "./Color";
 
 const Texts = StyleSheet.create({
   alignCenter: {

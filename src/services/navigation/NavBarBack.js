@@ -10,13 +10,13 @@ import {
 } from 'react-native';
 
 // Resources
-import {localAssets} from 'resources/assets';
-import {Style} from 'resources/Style';
-import {Texts} from 'resources/Texts';
-import Color from 'resources/Color';
+import {localAssets} from '../../resources/assets';
+import {Style} from '../../resources/Style';
+import {Texts} from '../../resources/Texts';
+import Color from '../../resources/Color';
 
 // Actions
-import {onBackAndroid} from 'services/navigation/NavManager'
+import {onBackAndroid} from '../../services/navigation/NavManager'
 
 class NavBarBack extends Component {
 
