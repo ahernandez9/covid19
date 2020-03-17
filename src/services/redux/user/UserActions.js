@@ -1,8 +1,10 @@
 import {Types} from './UserTypes';
 
-export const setAccessToken = (token) => async(dispatch) => {
+export const setSessionToken = (response) => async(dispatch) => {
+    const token = response && response.sessionToken ? response.sessionToken : '';
     dispatch({
         type: Types.SET_TOKEN,
         payload: token
     });
 };
+

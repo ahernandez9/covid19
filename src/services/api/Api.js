@@ -1,5 +1,6 @@
 import {launchAsyncTask} from "./ApiServices";
 import {Types, Verbs} from './ApiTypes';
+import {stringify} from 'qs';
 
 /** *** **/
 /** GET **/
@@ -25,14 +26,15 @@ import {Types, Verbs} from './ApiTypes';
 export const postLogin = (callbackError, callbackSuccess) => async(dispatch, getState) => {
     let url    = `/LogInServlet`;
     let params = {
-        email: "albertohr1996@gmail.com",
-        password: "123456"
+        email: 'albertohr1998@gmail.com',
+        password: '123456'
     };
+    params = stringify(params);
     let config = {
-        // headers: {
+        headers: {
             // 'Authorization': 'Bearer '+ accessToken,
-            // 'Content-Type':  'x-www-form-urlencoded'
-        // }
+            'Content-Type':  'application/x-www-form-urlencoded'
+        }
     };
 
     const currentFunction      = postLogin(callbackError, callbackSuccess);
@@ -43,14 +45,15 @@ export const postLogin = (callbackError, callbackSuccess) => async(dispatch, get
 export const postRegister = (callbackError, callbackSuccess) => async(dispatch, getState) => {
     let url    = `/RegisterServlet`;
     let params = {
-        email: "albertohr1996@gmail.com",
-        password: "123456"
+        email: 'albertohr1998@gmail.com',
+        password: '123456'
     };
-     let config = {
-        // headers: {
+    params = stringify(params);
+    let config = {
+        headers: {
         //     'Authorization': 'Bearer '+ accessToken,
-        //     'Content-Type':  'application/json'
-        // }
+            'Content-Type':  'application/x-www-form-urlencoded'
+        }
     };
 
     const currentFunction      = postRegister(callbackError, callbackSuccess);

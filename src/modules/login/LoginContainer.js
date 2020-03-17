@@ -31,7 +31,7 @@ class LoginContainer extends Component {
     };
 
     _goToRegister = () => {
-        Routing.route(Routing.register)
+        Routing.pop()
     }
 }
 

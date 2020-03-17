@@ -1,5 +1,6 @@
 import {setLoadingDefault} from '../../services/redux/loading/LoadingActions';
 import {postRegister} from '../../services/api/Api';
+import {DialogManager} from '../../services/DialogManager';
 
 export const setState = (type, payload) => (dispatch) => {
     dispatch({
@@ -13,8 +14,13 @@ export const apiRegister = () => async (dispatch) => {
 
   await dispatch(
       postRegister(
-      (error) => {console.log(error)},
-      (response) => console.log(response)
+      (error) => {
+          console.log(error);
+          DialogManager.singleAlert("Email already exists")
+      },
+      (response) => {
+          console.log(response)
+      }
       )
   );
 
